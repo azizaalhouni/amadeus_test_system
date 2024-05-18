@@ -1,6 +1,4 @@
-<script>
-    export let params;
-</script>
+
 
 <main>
     <h1>Submission Successful</h1>
