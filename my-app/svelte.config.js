@@ -11,9 +11,42 @@
 // };
 
 // export default config;
-import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vite';
+// import { sveltekit } from '@sveltejs/kit/vite';
+// import { defineConfig } from 'vite';
 
-export default defineConfig({
-    plugins: [sveltekit()],
-});
+// export default defineConfig({
+//     plugins: [sveltekit()],
+// });
+import adapter from '@sveltejs/adapter-auto';
+import preprocess from 'svelte-preprocess';
+
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+  kit: {
+    adapter: adapter(),
+    csp: {
+      mode: 'hash',
+      directives: { 'script-src': ['self'] }
+    }
+  },
+
+  preprocess: [
+    preprocess({
+    })
+  ]
+};
+
+export default config;
+
+// import adapter from '@sveltejs/adapter-auto';
+// import sveltePreprocess from 'svelte-preprocess';
+
+// export default {
+//   preprocess: sveltePreprocess(),
+//   kit: {
+//     adapter: adapter(),
+//     alias: {
+//       $components: 'src/lib/components'
+//     }
+//   }
+// };
